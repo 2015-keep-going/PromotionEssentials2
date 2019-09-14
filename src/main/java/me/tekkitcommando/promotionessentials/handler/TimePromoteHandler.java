@@ -87,9 +87,9 @@ public class TimePromoteHandler {
             long seconds;
 
             try {
-                hours = Integer.parseInt(timedRanks.get(rank).substring(0, 2));
-                minutes = Integer.parseInt(timedRanks.get(rank).substring(3, 5));
-                seconds = Integer.parseInt(timedRanks.get(rank).substring(6, 8));
+                hours = Long.parseLong(timedRanks.get(rank).substring(0, 2));
+                minutes = Long.parseLong(timedRanks.get(rank).substring(3, 5));
+                seconds = Long.parseLong(timedRanks.get(rank).substring(6, 8));
             } catch (NumberFormatException e) {
                 plugin.getPluginLogger().warning("Invalid time format! Disabling plugin to prevent corruption of timed ranks!");
                 plugin.getServer().getPluginManager().disablePlugin(plugin);

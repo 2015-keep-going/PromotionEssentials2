@@ -4,13 +4,19 @@
     <list default="true" id="fa559e52-499c-4cdc-994c-f0612a548ad3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/promotionessentials2.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/PromotionEssentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/PromotionEssentials.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/command/TokenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/command/TokenCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/handler/DateTimeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/handler/DateTimeHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/handler/TimePromoteHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/handler/TimePromoteHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/listener/PlayerJoinListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/listener/PlayerJoinListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/listener/PlayerLeaveListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/listener/PlayerLeaveListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/PromotionEssentials.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/PromotionEssentials.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/command/TokenCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/command/TokenCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/handler/DateTimeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/handler/DateTimeHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/handler/TimePromoteHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/handler/TimePromoteHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/listener/PlayerJoinListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/listener/PlayerJoinListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/listener/PlayerLeaveListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/listener/PlayerLeaveListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-promotionessentials2-2.0.6-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-promotionessentials2-2.0.6-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/promotionessentials2-2.0.6-SNAPSHOT.jar" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -118,8 +124,16 @@
       <workItem from="1564713573307" duration="826000" />
       <workItem from="1564845704735" duration="5000" />
       <workItem from="1565361983418" duration="2750000" />
-      <workItem from="1568485394034" duration="1798000" />
+      <workItem from="1568485394034" duration="3762000" />
     </task>
+    <task id="LOCAL-00001" summary="Get rid of the joda time library to reduce file size tremendously.">
+      <created>1568487392955</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568487392956</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,5 +151,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Get rid of the joda time library to reduce file size tremendously." />
+    <option name="LAST_COMMIT_MESSAGE" value="Get rid of the joda time library to reduce file size tremendously." />
   </component>
 </project>

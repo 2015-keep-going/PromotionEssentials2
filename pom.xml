@@ -86,6 +86,7 @@
             <groupId>com.github.JavaFactoryDev</groupId>
             <artifactId>LightningStorage</artifactId>
             <version>5a79eb44c5</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>

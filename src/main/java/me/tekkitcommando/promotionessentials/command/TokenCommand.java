@@ -109,9 +109,9 @@ public class TokenCommand implements CommandExecutor {
         long seconds;
 
         try {
-            hours = Integer.parseInt(expiration.substring(0, 2));
-            minutes = Integer.parseInt(expiration.substring(3, 5));
-            seconds = Integer.parseInt(expiration.substring(6, 8));
+            hours = Long.parseLong(expiration.substring(0, 2));
+            minutes = Long.parseLong(expiration.substring(3, 5));
+            seconds = Long.parseLong(expiration.substring(6, 8));
         } catch (NumberFormatException e) {
             return null;
         }
