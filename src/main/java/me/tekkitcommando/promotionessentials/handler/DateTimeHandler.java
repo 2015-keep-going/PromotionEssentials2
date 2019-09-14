@@ -1,18 +1,17 @@
 package me.tekkitcommando.promotionessentials.handler;
 
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class DateTimeHandler {
 
-    private DateTimeFormatter formatter = DateTimeFormat.forPattern("MM/dd/yyyy HH:mm:ss");
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
 
-    public DateTime getDateTime() {
-        DateTime dateTimeNow = DateTime.now();
-        String dateTimeString = dateTimeNow.toString(formatter);
+    public LocalDateTime getDateTime() {
+        LocalDateTime dateTimeNow = LocalDateTime.now();
+        String dateTimeString = dateTimeNow.format(formatter);
 
-        return formatter.parseDateTime(dateTimeString);
+        return LocalDateTime.parse(dateTimeString, formatter);
     }
 
     public DateTimeFormatter getFormatter() {

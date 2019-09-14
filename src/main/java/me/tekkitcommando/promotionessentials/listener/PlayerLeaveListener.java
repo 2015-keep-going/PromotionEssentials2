@@ -5,7 +5,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
-import org.joda.time.DateTime;
+
+import java.time.LocalDateTime;
 
 public class PlayerLeaveListener implements Listener {
 
@@ -20,9 +21,9 @@ public class PlayerLeaveListener implements Listener {
         Player player = event.getPlayer();
 
         if (plugin.getPluginConfig().getBoolean("time.enabled")) {
-            DateTime dateTimeNow = plugin.getDateTimeHandler().getDateTime();
+            LocalDateTime dateTimeNow = plugin.getDateTimeHandler().getDateTime();
 
-            plugin.getTimes().set(player.getUniqueId().toString() + ".lastLogoff", dateTimeNow.toString(plugin.getDateTimeHandler().getFormatter()));
+            plugin.getTimes().set(player.getUniqueId().toString() + ".lastLogoff", dateTimeNow.toString());
             plugin.getTimes().set(player.getUniqueId().toString() + ".totalTime", plugin.getTimePromoteHandler().getTotalTime().get(player));
         }
     }

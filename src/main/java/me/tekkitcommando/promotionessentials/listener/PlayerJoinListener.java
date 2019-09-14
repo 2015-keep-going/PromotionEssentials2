@@ -6,8 +6,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.joda.time.DateTime;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -32,15 +32,15 @@ public class PlayerJoinListener implements Listener {
 
         if (plugin.getPluginConfig().getBoolean("time.enabled")) {
             if (!plugin.getTimes().contains(player.getUniqueId().toString())) {
-                DateTime dateTimeNow = plugin.getDateTimeHandler().getDateTime();
+                LocalDateTime dateTimeNow = plugin.getDateTimeHandler().getDateTime();
 
                 plugin.getTimes().set(player.getUniqueId().toString() + ".totalTime", 0);
-                plugin.getTimes().set(player.getUniqueId().toString() + ".firstJoin", dateTimeNow.toString(plugin.getDateTimeHandler().getFormatter()));
-                plugin.getTimes().set(player.getUniqueId().toString() + ".latestLogin", dateTimeNow.toString(plugin.getDateTimeHandler().getFormatter()));
+                plugin.getTimes().set(player.getUniqueId().toString() + ".firstJoin", dateTimeNow.toString());
+                plugin.getTimes().set(player.getUniqueId().toString() + ".latestLogin", dateTimeNow.toString());
             } else {
-                DateTime dateTimeNow = plugin.getDateTimeHandler().getDateTime();
+                LocalDateTime dateTimeNow = plugin.getDateTimeHandler().getDateTime();
 
-                plugin.getTimes().set(player.getUniqueId().toString() + ".latestLogin", dateTimeNow.toString(plugin.getDateTimeHandler().getFormatter()));
+                plugin.getTimes().set(player.getUniqueId().toString() + ".latestLogin", dateTimeNow.toString());
             }
         }
     }

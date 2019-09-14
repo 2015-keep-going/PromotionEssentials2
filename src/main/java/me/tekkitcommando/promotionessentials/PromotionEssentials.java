@@ -16,8 +16,8 @@ import org.bstats.bukkit.Metrics;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.joda.time.DateTime;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -45,10 +45,10 @@ public class PromotionEssentials extends JavaPlugin {
     @Override
     public void onDisable() {
         if (config.getBoolean("time.enabled")) {
-            DateTime dateTimeNow = dateTimeHandler.getDateTime();
+            LocalDateTime dateTimeNow = dateTimeHandler.getDateTime();
 
             for (Player player : getServer().getOnlinePlayers()) {
-                times.set(player.getUniqueId().toString() + ".lastLogoff", dateTimeNow.toString(dateTimeHandler.getFormatter()));
+                times.set(player.getUniqueId().toString() + ".lastLogoff", dateTimeNow.toString());
                 times.set(player.getUniqueId().toString() + ".totalTime", timePromoteHandler.getTotalTime().get(player));
             }
         }

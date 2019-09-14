@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa559e52-499c-4cdc-994c-f0612a548ad3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/promotionessentials2.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/PromotionEssentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/PromotionEssentials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/command/ApplyCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/command/ApplyCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/command/RankCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/command/RankCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/handler/PromotionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/handler/PromotionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/PromotionEssentials.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/PromotionEssentials.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/command/ApplyCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/command/ApplyCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/command/RankCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/command/RankCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/handler/PromotionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/tekkitcommando/promotionessentials/handler/PromotionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-promotionessentials2-2.0.4-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/promotionessentials2-2.0.4-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/command/TokenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/command/TokenCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/handler/DateTimeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/handler/DateTimeHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/handler/TimePromoteHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/handler/TimePromoteHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/listener/PlayerJoinListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/listener/PlayerJoinListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/listener/PlayerLeaveListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/tekkitcommando/promotionessentials/listener/PlayerLeaveListener.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +29,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1OqmbLBAEo15QRTfNu3Y7a07sgk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -44,7 +49,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -113,6 +118,7 @@
       <workItem from="1564713573307" duration="826000" />
       <workItem from="1564845704735" duration="5000" />
       <workItem from="1565361983418" duration="2750000" />
+      <workItem from="1568485394034" duration="1798000" />
     </task>
     <servers />
   </component>

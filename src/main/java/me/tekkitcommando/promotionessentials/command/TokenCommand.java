@@ -6,12 +6,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.joda.time.DateTime;
-import org.joda.time.Hours;
-import org.joda.time.Minutes;
-import org.joda.time.Seconds;
-import org.joda.time.format.DateTimeFormatter;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 public class TokenCommand implements CommandExecutor {
@@ -43,9 +40,9 @@ public class TokenCommand implements CommandExecutor {
                         if (plugin.getTokens().contains(token)) {
                             if (plugin.getTokens().contains(token + ".expire")) {
                                 // Check if expired
-                                DateTime dateTimeExpired = plugin.getDateTimeHandler().getFormatter().parseDateTime(plugin.getTokens().getString(token + ".expire"));
+                                LocalDateTime dateTimeExpired = LocalDateTime.parse(plugin.getTokens().getString(token + ".expire"), plugin.getDateTimeHandler().getFormatter());
 
-                                if (dateTimeExpired.isBeforeNow()) {
+                                if (dateTimeExpired.isBefore(plugin.getDateTimeHandler().getDateTime())) {
                                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getMessages().getString("TokenExpired")));
                                     plugin.getTokens().removeKey(token);
                                 } else {
@@ -83,10 +80,10 @@ public class TokenCommand implements CommandExecutor {
                             plugin.getTokens().set(tokenFormatted + ".group", group);
 
                             if (!(expiration == null)) {
-                                DateTime dateTimeExpired = getDateTimeExpired(plugin.getDateTimeHandler().getFormatter(), expiration);
+                                LocalDateTime dateTimeExpired = getDateTimeExpired(plugin.getDateTimeHandler().getFormatter(), expiration);
 
                                 if (dateTimeExpired != null) {
-                                    plugin.getTokens().set(tokenFormatted + ".expire", dateTimeExpired.toString(plugin.getDateTimeHandler().getFormatter()));
+                                    plugin.getTokens().set(tokenFormatted + ".expire", dateTimeExpired.toString());
                                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getMessages().getString("CreateToken")).replace("%token%", tokenFormatted).replace("%group%", group));
                                 } else {
                                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getMessages().getString("InvalidArgs")));
@@ -106,10 +103,10 @@ public class TokenCommand implements CommandExecutor {
         return true;
     }
 
-    private DateTime getDateTimeExpired(DateTimeFormatter formatter, String expiration) {
-        int hours;
-        int minutes;
-        int seconds;
+    private LocalDateTime getDateTimeExpired(DateTimeFormatter formatter, String expiration) {
+        long hours;
+        long minutes;
+        long seconds;
 
         try {
             hours = Integer.parseInt(expiration.substring(0, 2));
@@ -119,10 +116,10 @@ public class TokenCommand implements CommandExecutor {
             return null;
         }
 
-        DateTime dateTimeNow = plugin.getDateTimeHandler().getDateTime();
-        DateTime dateTimeExpired = dateTimeNow.plus(Hours.hours(hours)).plus(Minutes.minutes(minutes)).plus(Seconds.seconds(seconds));
-        String dateTimeExpiredStr = dateTimeExpired.toString(formatter);
+        LocalDateTime dateTimeNow = plugin.getDateTimeHandler().getDateTime();
+        LocalDateTime dateTimeExpired = dateTimeNow.plusHours(hours).plusMinutes(minutes).plusSeconds(seconds);
+        String dateTimeExpiredStr = dateTimeExpired.format(formatter);
 
-        return formatter.parseDateTime(dateTimeExpiredStr);
+        return LocalDateTime.parse(dateTimeExpiredStr, plugin.getDateTimeHandler().getFormatter());
     }
 }

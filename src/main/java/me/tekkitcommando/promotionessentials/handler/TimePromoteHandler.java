@@ -4,9 +4,9 @@ import me.tekkitcommando.promotionessentials.PromotionEssentials;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
-import org.joda.time.DateTime;
-import org.joda.time.Seconds;
 
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,7 +50,7 @@ public class TimePromoteHandler {
     }
 
     private long getTotalTime(Player player) {
-        DateTime latestLogin = plugin.getDateTimeHandler().getFormatter().parseDateTime(plugin.getTimes().getString(player.getUniqueId().toString() + ".latestLogin"));
+        LocalDateTime latestLogin = LocalDateTime.parse(plugin.getTimes().getString(player.getUniqueId().toString() + ".latestLogin"), plugin.getDateTimeHandler().getFormatter());
         long prevTotalTime;
         long ticksToAdd = 0;
 
@@ -62,17 +62,17 @@ public class TimePromoteHandler {
         }
 
         if (plugin.getPluginConfig().getBoolean("time.countOffine")) {
-            DateTime lastLogoff = plugin.getDateTimeHandler().getFormatter().parseDateTime(plugin.getTimes().getString(player.getUniqueId().toString() + ".lastLogoff"));
+            LocalDateTime lastLogoff = LocalDateTime.parse(plugin.getTimes().getString(player.getUniqueId().toString() + ".lastLogoff"), plugin.getDateTimeHandler().getFormatter());
 
             if (lastLogoff == null) {
                 lastLogoff = latestLogin;
             }
 
-            ticksToAdd += Seconds.secondsBetween(lastLogoff, latestLogin).getSeconds() * 20;
+            ticksToAdd += ChronoUnit.SECONDS.between(lastLogoff, latestLogin) * 20;
         }
 
-        DateTime dateTimeNow = plugin.getDateTimeHandler().getDateTime();
-        ticksToAdd += Seconds.secondsBetween(latestLogin, dateTimeNow).getSeconds() * 20;
+        LocalDateTime dateTimeNow = plugin.getDateTimeHandler().getDateTime();
+        ticksToAdd += ChronoUnit.SECONDS.between(latestLogin, dateTimeNow) * 20;
         totalTime.replace(player, (prevTotalTime + ticksToAdd));
 
         return totalTime.get(player);
@@ -82,9 +82,9 @@ public class TimePromoteHandler {
         String highestRankEarned = null;
 
         for (String rank : timedRanks.keySet()) {
-            int hours;
-            int minutes;
-            int seconds;
+            long hours;
+            long minutes;
+            long seconds;
 
             try {
                 hours = Integer.parseInt(timedRanks.get(rank).substring(0, 2));
@@ -96,9 +96,9 @@ public class TimePromoteHandler {
                 return null;
             }
 
-            int hoursToSeconds = hours * 3600;
-            int minutesToSeconds = minutes * 60;
-            int ticksNeededForRank = (hoursToSeconds + minutesToSeconds + seconds) * 20;
+            long hoursToSeconds = hours * 3600;
+            long minutesToSeconds = minutes * 60;
+            long ticksNeededForRank = (hoursToSeconds + minutesToSeconds + seconds) * 20;
 
             if (ticksNeededForRank <= totalTime) {
                 highestRankEarned = rank;
